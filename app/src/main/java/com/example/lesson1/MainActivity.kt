@@ -12,7 +12,7 @@ import com.example.lesson1.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var pickText: ActivityResultLauncher<Intent>
+    private lateinit var result: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLauncher() {
-        pickText =
+        result =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
                     binding.editText.setText(result.data?.getStringExtra(KEY_FOR_RESULT))
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     private fun transferData() {
         val intent = Intent(this@MainActivity, SecondActivity::class.java)
         intent.putExtra(KEY_FOR_RESULT, binding.editText.text.toString())
-        pickText.launch(intent)
+        result.launch(intent)
     }
 
     private fun setData() {
