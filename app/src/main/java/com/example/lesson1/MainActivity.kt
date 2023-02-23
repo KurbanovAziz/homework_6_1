@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.lesson1.Key.KEY_FOR_RESULT
 import com.example.lesson1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initLauncher() {
         result =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    binding.editText.setText(result.data?.getStringExtra(KEY_FOR_RESULT))
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                if (it.resultCode == Activity.RESULT_OK) {
+                    binding.editText.setText(it.data?.getStringExtra(KEY_FOR_RESULT))
                 }
             }
     }
@@ -50,5 +49,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setData() {
         binding.editText.setText(intent.getStringExtra(KEY_FOR_RESULT))
+    }
+
+    companion object{
+        const val KEY_FOR_RESULT = "result"
     }
 }

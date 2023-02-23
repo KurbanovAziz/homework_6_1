@@ -3,7 +3,7 @@ package com.example.lesson1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.lesson1.Key.KEY_FOR_RESULT
+import com.example.lesson1.MainActivity.Companion.KEY_FOR_RESULT
 import com.example.lesson1.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
