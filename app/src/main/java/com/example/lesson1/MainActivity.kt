@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             if (binding.editText.text.isNotEmpty()) {
                 transferData()
             } else {
-                makeText(this, getString(R.string.not_empty))
+                makeText(getString(R.string.not_empty))
             }
         }
     }
