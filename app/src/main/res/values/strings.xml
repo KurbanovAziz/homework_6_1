@@ -3,4 +3,5 @@
     <string name="text">Text</string>
     <string name="not_empty">EditText не может быть пустым!</string>
     <string name="send_text">Send text</string>
+    <string name="back">Back</string>
 </resources>

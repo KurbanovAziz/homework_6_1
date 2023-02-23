@@ -22,16 +22,14 @@ class SecondActivity : AppCompatActivity() {
         binding.edText.setText(intent.getStringExtra(KEY_FOR_RESULT))
     }
 
-
     private fun initClickers() {
         binding.btnReturn.setOnClickListener {
             setResult(
-                RESULT_OK,Intent().putExtra(
-                    KEY_FOR_RESULT,binding.edText.text.toString()
+                RESULT_OK, Intent().putExtra(
+                    KEY_FOR_RESULT, binding.edText.text.toString()
                 )
             )
             finish()
         }
     }
-
 }
